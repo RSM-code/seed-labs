@@ -28,7 +28,7 @@ const Index = () => {
         {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
       </button>
 
-      <div className="flex-grow flex flex-col justify-center items-center -translate-y-[150px]">
+      <div className="flex-grow flex flex-col justify-center items-center -translate-y-[100px]">
         <Hero />
       </div>
       <div className="flex-shrink-0">
