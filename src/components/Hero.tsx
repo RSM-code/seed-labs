@@ -18,7 +18,7 @@ export const Hero = () => {
   if (!mounted) return null;
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden">
+    <section className="flex flex-col justify-center items-center px-6 relative overflow-hidden h-full">
       {/* Background grid effect */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-10 pointer-events-none dark:bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] dark:opacity-20" />
 
@@ -35,15 +35,15 @@ export const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center z-10 max-w-4xl mx-auto"
+        className="text-center z-10 max-w-4xl mx-auto w-full px-4"
       >
         <span className="inline-block py-1 px-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400 mb-6 font-medium">
           v1.0 — Infrastructure
         </span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400">
           Votre identité numérique vous appartient
         </h1>
-        <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 mb-10 font-light tracking-wide">
+        <p className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 mb-10 font-light tracking-wide">
           SEED Protocol — Infrastructure d'identité souveraine
         </p>
       </motion.div>
