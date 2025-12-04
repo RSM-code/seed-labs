@@ -2,8 +2,7 @@
   "hero": {
     "main_slogan": "Votre identité numérique vous appartient",
     "brand": "seed labs",
-    "sub_slogan_prefix_bold": "id",
-    "sub_slogan_prefix_regular": "OS",
+    "sub_slogan_prefix": "id/OS",
     "sovereign_identity": "identité souveraine",
     "rotating_texts": [
       "identité souveraine",
