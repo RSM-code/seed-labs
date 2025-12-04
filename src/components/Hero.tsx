@@ -13,7 +13,7 @@ export const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [rotatingTexts.length]);
@@ -43,7 +43,7 @@ export const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 1.0 }}
                 className="absolute inset-0 flex items-center justify-center"
               >
                 {rotatingTexts[index]}
