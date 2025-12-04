@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen max-h-screen overflow-hidden">
-      <div className="flex-grow flex flex-col">
+      <div className="flex-grow flex flex-col justify-center items-center">
         <Hero />
       </div>
       <div className="flex-shrink-0">
