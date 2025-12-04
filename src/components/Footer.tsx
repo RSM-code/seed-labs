@@ -6,13 +6,14 @@ export const Footer = () => {
           <span className="font-bold text-white tracking-wider mr-2">SEED</span>
           <span>PROTOCOL</span>
         </div>
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-[#22c55e] transition-colors">Documentation</a>
-          <a href="#" className="hover:text-[#22c55e] transition-colors">Contact</a>
-        </div>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
           <span>Projet en développement</span>
+        </div>
+        <div>
+          <a href="mailto:dev@seed-labs.xyz" className="hover:text-[#22c55e] transition-colors">
+            dev@seed-labs.xyz
+          </a>
         </div>
       </div>
     </footer>
