@@ -1,9 +1,9 @@
 export const Footer = () => {
   return (
-    <footer className="py-6 px-6 bg-zinc-100 text-zinc-500 border-t border-zinc-200 text-sm dark:bg-black dark:text-zinc-400 dark:border-zinc-900">
+    <footer className="py-6 px-6 bg-background border-t border-border text-sm text-muted-foreground">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
-          <span className="font-bold text-black dark:text-white tracking-wider mr-2">SEED</span>
+          <span className="font-bold text-foreground tracking-wider mr-2">SEED</span>
           <span>PROTOCOL</span>
         </div>
         <div className="flex items-center gap-2">

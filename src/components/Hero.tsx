@@ -33,9 +33,11 @@ export const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="z-10 max-w-4xl w-full px-4"
       >
-        <span className="inline-block py-1 px-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400 mb-8 font-medium">
-          Recherche & Développement
-        </span>
+        <div className="w-full flex justify-end">
+          <span className="inline-block py-1 px-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400 mb-8 font-medium">
+            seed labs
+          </span>
+        </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
           Votre identité numérique vous appartient
         </h1>
