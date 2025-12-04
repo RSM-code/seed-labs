@@ -1,6 +1,27 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+
+const slogans = [
+  { lang: "fr", text: "seed id OS - identité souveraine +" },
+  { lang: "en", text: "seed id OS - sovereign identity +" },
+  { lang: "es", text: "seed id OS - identidad soberana +" },
+  { lang: "ja", text: "seed id OS - 主権的アイデンティティ +" },
+  { lang: "zh", text: "seed id OS - 主权身份 +" },
+  { lang: "ru", text: "seed id OS - суверенная идентичность +" },
+  { lang: "tr", text: "seed id OS - egemen kimlik +" },
+  { lang: "id", text: "seed id OS - identitas berdaulat +" },
+];
 
 export const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % slogans.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
       {/* Background grid effect */}
@@ -18,9 +39,20 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
           Votre identité numérique vous appartient
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-3xl mx-auto">
-          seed id OS - identité souveraine +
-        </p>
+        <div className="relative h-12 flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={slogans[index].lang}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-3xl mx-auto absolute"
+            >
+              {slogans[index].text}
+            </motion.p>
+          </AnimatePresence>
+        </div>
       </motion.div>
     </section>
   );
