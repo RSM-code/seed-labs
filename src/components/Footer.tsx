@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="py-6 px-6 bg-background border-t border-border text-sm text-muted-foreground">
+    <footer className="py-6 px-6 bg-background text-sm text-muted-foreground">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
           <span className="font-bold text-foreground tracking-wider">SEED</span>
