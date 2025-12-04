@@ -19,7 +19,7 @@ export const Hero = () => {
           Votre identité numérique vous appartient
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-3xl mx-auto">
-          SEED id Operating System - Identité souveraine
+          SEED id Operating System - Identité souveraine +
         </p>
       </motion.div>
     </section>
