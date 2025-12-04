@@ -21,7 +21,7 @@ export const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % slogans.length);
-    }, 3000);
+    }, 4500); // Increased interval for a slower pace
     return () => clearInterval(interval);
   }, []);
 
@@ -53,7 +53,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, rotateX: -90 }}
                 animate={{ opacity: 1, rotateX: 0 }}
                 exit={{ opacity: 0, rotateX: 90 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.8, ease: "easeInOut" }} // Slowed down the flip animation
                 className="absolute left-0 top-0"
               >
                 {slogans[index].text}
