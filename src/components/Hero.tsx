@@ -39,7 +39,7 @@ export const Hero = () => {
           <div className="relative">
             <span>{t("hero.sub_slogan_prefix")}</span>
             <div className="mt-2 md:mt-0 md:absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-4">
-              <div className="relative w-80 h-8">
+              <div className="relative w-full md:w-80 h-8">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={index}
