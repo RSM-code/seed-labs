@@ -2,14 +2,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const slogans = [
-  { lang: "fr", text: "seed id OS - identité souveraine +" },
-  { lang: "en", text: "seed id OS - sovereign identity +" },
-  { lang: "es", text: "seed id OS - identidad soberana +" },
-  { lang: "ja", text: "seed id OS - 主権的アイデンティティ +" },
-  { lang: "zh", text: "seed id OS - 主权身份 +" },
-  { lang: "ru", text: "seed id OS - суверенная идентичность +" },
-  { lang: "tr", text: "seed id OS - egemen kimlik +" },
-  { lang: "id", text: "seed id OS - identitas berdaulat +" },
+  { lang: "fr", text: "seed id OS - identité souveraine" },
+  { lang: "en", text: "seed id OS - sovereign identity" },
+  { lang: "es", text: "seed id OS - identidad soberana" },
+  { lang: "ja", text: "seed id OS - 主権的アイデンティティ" },
+  { lang: "zh", text: "seed id OS - 主权身份" },
+  { lang: "ru", text: "seed id OS - суверенная идентичность" },
+  { lang: "tr", text: "seed id OS - egemen kimlik" },
+  { lang: "id", text: "seed id OS - identitas berdaulat" },
 ];
 
 export const Hero = () => {
@@ -39,13 +39,13 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
           Votre identité numérique vous appartient
         </h1>
-        <div className="relative h-12 flex items-center justify-center">
+        <div className="relative h-12 flex items-center justify-center [perspective:200px]">
           <AnimatePresence mode="wait">
             <motion.p
               key={slogans[index].lang}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, rotateX: -90 }}
+              animate={{ opacity: 1, rotateX: 0 }}
+              exit={{ opacity: 0, rotateX: 90 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-3xl mx-auto absolute"
             >
