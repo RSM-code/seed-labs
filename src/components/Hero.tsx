@@ -6,7 +6,6 @@ export const Hero = () => {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
 
-  // The 'returnObjects' option is essential for i18next to return the array
   const rotatingTexts = t("hero.rotating_texts", {
     returnObjects: true,
   }) as string[];
@@ -14,7 +13,7 @@ export const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
-    }, 3000); // Change text every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [rotatingTexts.length]);
@@ -32,28 +31,24 @@ export const Hero = () => {
             {t("hero.brand")}
           </span>
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-800 dark:text-zinc-200 -mt-5 mb-4">
           {t("hero.main_slogan")}
         </h1>
-        <div className="h-20 md:h-12 flex items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
-          <div className="relative">
-            <span>{t("hero.sub_slogan_prefix")}</span>
-            <div className="mt-2 md:mt-0 md:absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-4">
-              <div className="relative w-full md:w-80 h-8">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    {rotatingTexts[index]}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-            </div>
+        <div className="flex flex-col items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
+          <div className="mb-2">{t("hero.sub_slogan_prefix")}</div>
+          <div className="relative w-full h-8">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                {rotatingTexts[index]}
+              </motion.span>
+            </AnimatePresence>
           </div>
         </div>
       </motion.div>
