@@ -2,15 +2,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const slogans = [
-  { lang: "fr", text: "seed id OS - identité souveraine" },
-  { lang: "en", text: "seed id OS - sovereign identity" },
-  { lang: "es", text: "seed id OS - identidad soberana" },
-  { lang: "ja", text: "seed id OS - 主権的アイデンティティ" },
-  { lang: "zh", text: "seed id OS - 主权身份" },
-  { lang: "ru", text: "seed id OS - суверенная идентичность" },
-  { lang: "tr", text: "seed id OS - egemen kimlik" },
-  { lang: "id", text: "seed id OS - identitas berdaulat" },
+  { lang: "fr", text: "identité souveraine" },
+  { lang: "en", text: "sovereign identity" },
+  { lang: "es", text: "identidad soberana" },
+  { lang: "ja", text: "主権的アイデンティティ" },
+  { lang: "zh", text: "主权身份" },
+  { lang: "ru", text: "суверенная идентичность" },
+  { lang: "tr", text: "egemen kimlik" },
+  { lang: "id", text: "identitas berdaulat" },
 ];
+
+// We use the longest slogan to create a stable width container, preventing layout shifts.
+const longestSlogan = "суверенная идентичность";
 
 export const Hero = () => {
   const [index, setIndex] = useState(0);
@@ -39,19 +42,24 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
           Votre identité numérique vous appartient
         </h1>
-        <div className="relative h-12 flex items-center justify-center [perspective:200px]">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={slogans[index].lang}
-              initial={{ opacity: 0, rotateX: -90 }}
-              animate={{ opacity: 1, rotateX: 0 }}
-              exit={{ opacity: 0, rotateX: 90 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-3xl mx-auto absolute"
-            >
-              {slogans[index].text}
-            </motion.p>
-          </AnimatePresence>
+        <div className="h-12 flex items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
+          <span>seed id/OS -&nbsp;</span>
+          <div className="relative [perspective:200px] text-left">
+            {/* Spacer to prevent jiggling */}
+            <span className="invisible">{longestSlogan}</span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={slogans[index].lang}
+                initial={{ opacity: 0, rotateX: -90 }}
+                animate={{ opacity: 1, rotateX: 0 }}
+                exit={{ opacity: 0, rotateX: 90 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="absolute left-0 top-0"
+              >
+                {slogans[index].text}
+              </motion.span>
+            </AnimatePresence>
+          </div>
         </div>
       </motion.div>
     </section>
