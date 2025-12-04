@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="bg-black min-h-screen text-white selection:bg-[#22c55e] selection:text-black flex flex-col justify-between">
+    <main className="bg-white dark:bg-black min-h-screen text-black dark:text-white selection:bg-[#22c55e] selection:text-black dark:selection:text-white">
       <Hero />
       <Footer />
     </main>
