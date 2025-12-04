@@ -2,7 +2,8 @@
   "hero": {
     "main_slogan": "Your digital identity belongs to you",
     "brand": "seed labs",
-    "sub_slogan_prefix": "id/OS",
+    "sub_slogan_prefix_bold": "id",
+    "sub_slogan_prefix_regular": "OS",
     "sovereign_identity": "sovereign identity",
     "rotating_texts": [
       "sovereign identity",
