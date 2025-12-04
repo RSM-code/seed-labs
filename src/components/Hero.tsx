@@ -1,35 +1,10 @@
 import { motion } from "framer-motion";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export const Hero = () => {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
-  if (!mounted) return null;
-
   return (
     <section className="flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
       {/* Background grid effect */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-10 pointer-events-none dark:bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] dark:opacity-20" />
-
-      {/* Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="absolute top-6 right-6 p-2 rounded-full bg-white/10 dark:bg-black/10 backdrop-blur-sm border border-white/20 dark:border-black/20 text-black dark:text-white hover:bg-white/20 dark:hover:bg-black/20 transition-colors z-20"
-        aria-label="Toggle theme"
-      >
-        {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-      </button>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
