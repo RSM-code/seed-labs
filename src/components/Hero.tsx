@@ -35,21 +35,25 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
           {t("hero.main_slogan")}
         </h1>
-        <div className="h-20 md:h-12 flex flex-col md:flex-row items-center justify-center md:gap-4 text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
-          <span>{t("hero.sub_slogan_prefix")}</span>
-          <div className="relative w-full md:w-80 h-8">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                {rotatingTexts[index]}
-              </motion.span>
-            </AnimatePresence>
+        <div className="h-20 md:h-12 flex items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
+          <div className="relative">
+            <span>{t("hero.sub_slogan_prefix")}</span>
+            <div className="mt-2 md:mt-0 md:absolute md:left-full md:top-1/2 md:-translate-y-1/2 md:ml-4">
+              <div className="relative w-80 h-8">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    {rotatingTexts[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
