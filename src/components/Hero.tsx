@@ -37,18 +37,22 @@ export const Hero = () => {
         </h1>
         <div className="h-12 flex items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
           <span>{t("hero.sub_slogan_prefix")}&nbsp;</span>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-left"
-            >
-              {rotatingTexts[index]}
-            </motion.span>
-          </AnimatePresence>
+          <div className="relative w-80 h-8 text-left">
+            {" "}
+            {/* Container with fixed width */}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 flex items-center"
+              >
+                {rotatingTexts[index]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
         </div>
       </motion.div>
     </section>
