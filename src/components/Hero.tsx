@@ -37,6 +37,9 @@ export const Hero = () => {
         </h1>
         <div className="h-20 md:h-12 flex flex-col md:flex-row items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
           <span>{t("hero.sub_slogan_prefix")}</span>
+          <span className="hidden md:inline">
+            {t("hero.sub_slogan_separator")}
+          </span>
           <div className="relative w-full md:w-80 h-8">
             <AnimatePresence mode="wait">
               <motion.span
