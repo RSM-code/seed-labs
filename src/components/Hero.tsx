@@ -37,15 +37,17 @@ export const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center z-10 max-w-4xl mx-auto w-full px-4 flex flex-col justify-center items-center h-full"
       >
-        <span className="inline-block py-1 px-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400 mb-6 font-medium">
-          v1.0 — Infrastructure
-        </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
-          Votre identité numérique vous appartient
-        </h1>
-        <p className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 mb-10 font-light tracking-wide max-w-3xl">
-          SEED Protocol — Infrastructure d'identité souveraine
-        </p>
+        <div className="flex flex-col items-center justify-center space-y-8 py-8">
+          <span className="inline-block py-1 px-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400 font-medium">
+            v1.0 — Infrastructure
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-800 dark:text-zinc-200">
+            Votre identité numérique vous appartient
+          </h1>
+          <p className="text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide max-w-3xl">
+            SEED Protocol — Infrastructure d'identité souveraine
+          </p>
+        </div>
       </motion.div>
     </section>
   );
