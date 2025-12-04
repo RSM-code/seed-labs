@@ -35,11 +35,8 @@ export const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-zinc-800 dark:text-zinc-200">
           {t("hero.main_slogan")}
         </h1>
-        <div className="h-20 md:h-12 flex flex-col md:flex-row items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
+        <div className="h-20 md:h-12 flex flex-col md:flex-row items-center justify-center md:gap-4 text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
           <span>{t("hero.sub_slogan_prefix")}</span>
-          <span className="hidden md:inline">
-            {t("hero.sub_slogan_separator")}
-          </span>
           <div className="relative w-full md:w-80 h-8">
             <AnimatePresence mode="wait">
               <motion.span
