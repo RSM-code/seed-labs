@@ -3,7 +3,12 @@
     "main_slogan": "Your digital identity belongs to you",
     "brand": "seed labs",
     "sub_slogan_prefix": "seed id/OS -",
-    "sovereign_identity": "sovereign identity"
+    "sovereign_identity": "sovereign identity",
+    "rotating_texts": [
+      "sovereign identity",
+      "decentralized identity",
+      "self-sovereign identity"
+    ]
   },
   "footer": {
     "status": "Project in development"

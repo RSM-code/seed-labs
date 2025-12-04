@@ -1,8 +1,23 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 export const Hero = () => {
   const { t } = useTranslation();
+  const [index, setIndex] = useState(0);
+
+  // The 'returnObjects' option is essential for i18next to return the array
+  const rotatingTexts = t("hero.rotating_texts", {
+    returnObjects: true,
+  }) as string[];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
+    }, 3000); // Change text every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [rotatingTexts.length]);
 
   return (
     <section className="flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
@@ -22,7 +37,18 @@ export const Hero = () => {
         </h1>
         <div className="h-12 flex items-center justify-center text-lg md:text-xl lg:text-2xl text-zinc-600 dark:text-zinc-400 font-light tracking-wide">
           <span>{t("hero.sub_slogan_prefix")}&nbsp;</span>
-          <span className="text-left">{t("hero.sovereign_identity")}</span>
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.5 }}
+              className="text-left"
+            >
+              {rotatingTexts[index]}
+            </motion.span>
+          </AnimatePresence>
         </div>
       </motion.div>
     </section>
