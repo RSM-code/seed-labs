@@ -26,7 +26,7 @@ export const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="z-10 max-w-4xl w-full px-4"
       >
-        <div className="w-full flex justify-end">
+        <div className="w-full flex justify-start">
           <span className="inline-block py-1 px-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-600 dark:text-zinc-400 mb-8 font-medium">
             {t("hero.brand")}
           </span>
